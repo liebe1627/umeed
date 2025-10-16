@@ -1,42 +1,48 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import welcomeToUmeed from '../static/images/welcomeToUmeed.png'
+import successStories from '../static/images/successStories.png'
+import ourMission from '../static/images/ourMission.png'
+import getInvolved from '../static/images/getInvolved.png'
 
 export default function Slider() {
     const [currentSlide, setCurrentSlide] = useState(0);
     
-    // Sample slides - replace with your actual images/content
     const slides = [
         {
             id: 1,
             title: "Welcome to Umeed",
             description: "Making a difference in communities",
-            bgColor: "#ffd43b"
+            bgColor: "#ffd43b",
+            image: welcomeToUmeed
         },
         {
             id: 2,
             title: "Our Mission",
             description: "Empowering lives through education",
-            bgColor: "#74c0fc"
+            bgColor: "#3d2817",
+            image: ourMission
         },
         {
             id: 3,
             title: "Get Involved",
             description: "Join us in creating change",
-            bgColor: "#ff6b6b"
+            bgColor: "#ffd43b",
+            image: getInvolved
         },
         {
             id: 4,
             title: "Success Stories",
             description: "See the impact we've made",
-            bgColor: "#51cf66"
+            bgColor: "#3d2817",
+            image: successStories
         }
     ];
 
-    // Auto-play functionality
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % slides.length);
-        }, 4000); // Change slide every 4 seconds
+        }, 4000);
 
         return () => clearInterval(interval);
     }, [slides.length]);
@@ -55,8 +61,7 @@ export default function Slider() {
 
     return (
         <div className="sparent">
-            <div className="sdiv1" style={{ position: 'relative', overflow: 'hidden', backgroundColor: '#f5f5f5', borderRadius: '20px' }}>
-                {/* Slides Container */}
+            <div className="sdiv1" style={{ position: 'relative', overflow: 'hidden', backgroundColor: '#f5f5f5', borderRadius: '20px', height: '600px' }}>
                 <div style={{
                     display: 'flex',
                     transition: 'transform 0.5s ease-in-out',
@@ -70,42 +75,68 @@ export default function Slider() {
                                 minWidth: '100%',
                                 height: '100%',
                                 display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
+                                flexDirection: 'row',
+                                justifyContent: 'space-between',
                                 alignItems: 'center',
                                 backgroundColor: slide.bgColor,
                                 padding: '40px',
-                                boxSizing: 'border-box'
+                                boxSizing: 'border-box',
+                                position: 'relative',
+                                overflow: 'hidden'
                             }}
                         >
-                            <h2 style={{
-                                fontSize: '48px',
-                                color: '#3d2817',
-                                marginBottom: '20px',
-                                textAlign: 'center'
+                            {/* Image on the right with fade out */}
+                            <div style={{
+                                position: 'absolute',
+                                right: 0,
+                                top: 0,
+                                height: '100%',
+                                width: '55%',
+                                backgroundImage: `url('${slide.image}')`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                                maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%)',
+                                WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%)'
+                            }} />
+
+                            {/* Text content */}
+                            <div style={{
+                                padding: '60px',
+                                borderRadius: '20px',
+                                textAlign: 'center',
+                                width: '85%',
+                                position: 'relative',
+                                zIndex: 5
                             }}>
-                                {slide.title}
-                            </h2>
-                            <p style={{
-                                fontSize: '24px',
-                                color: '#3d2817',
-                                textAlign: 'center'
-                            }}>
-                                {slide.description}
-                            </p>
+                                <h2 style={{
+                                    fontSize: '48px',
+                                    color: slide.bgColor === '#ffd43b' ? '#3d2817' : '#ffd43b',
+                                    marginBottom: '20px',
+                                    textAlign: 'left'
+                                }}>
+                                    {slide.title}
+                                </h2>
+                                <p style={{
+                                    fontSize: '24px',
+                                    color: slide.bgColor === '#ffd43b' ? '#3d2817' : '#ffd43b',
+                                    textAlign: 'left'
+                                }}>
+                                    {slide.description}
+                                </p>
+                            </div>
                         </div>
                     ))}
                 </div>
 
                 {/* Navigation Arrows */}
-                <button
+                {/* <button
                     onClick={prevSlide}
                     style={{
                         position: 'absolute',
-                        left: '20px',
+                        left: '10px',
                         top: '50%',
                         transform: 'translateY(-50%)',
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                        backgroundColor: 'transparent',
                         border: 'none',
                         borderRadius: '50%',
                         width: '50px',
@@ -114,23 +145,21 @@ export default function Slider() {
                         justifyContent: 'center',
                         alignItems: 'center',
                         cursor: 'pointer',
-                        zIndex: 10,
+                        zIndex: 20,
                         transition: 'background-color 0.3s'
                     }}
-                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 1)'}
-                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.8)'}
                 >
-                    <ChevronLeft size={30} color="#3d2817" />
+                    <ChevronLeft size={20} color={slides[currentSlide].bgColor === '#ffd43b' ? '#3d2817' : '#ffd43b'} />
                 </button>
 
                 <button
                     onClick={nextSlide}
                     style={{
                         position: 'absolute',
-                        right: '20px',
+                        right: '10px',
                         top: '50%',
                         transform: 'translateY(-50%)',
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                        backgroundColor: 'transparent',
                         border: 'none',
                         borderRadius: '50%',
                         width: '50px',
@@ -139,14 +168,12 @@ export default function Slider() {
                         justifyContent: 'center',
                         alignItems: 'center',
                         cursor: 'pointer',
-                        zIndex: 10,
+                        zIndex: 20,
                         transition: 'background-color 0.3s'
                     }}
-                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 1)'}
-                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.8)'}
                 >
-                    <ChevronRight size={30} color="#3d2817" />
-                </button>
+                    <ChevronRight size={20} color={slides[currentSlide].bgColor === '#ffd43b' ? '#3d2817' : '#ffd43b'} />
+                </button> */}
 
                 {/* Dots Navigation */}
                 <div style={{
@@ -164,12 +191,12 @@ export default function Slider() {
                             onClick={() => goToSlide(index)}
                             style={{
                                 width: '12px',
-                                height: '12px',
+                                height: '15px',
                                 borderRadius: '50%',
-                                border: '2px solid #3d2817',
-                                backgroundColor: currentSlide === index ? '#3d2817' : 'transparent',
+                                border: `2px solid ${slides[currentSlide].bgColor === '#ffd43b' ? '#3d2817' : '#ffd43b'}`,
+                                backgroundColor: currentSlide === index ? (slides[currentSlide].bgColor === '#ffd43b' ? '#3d2817' : '#ffd43b') : 'transparent',
                                 cursor: 'pointer',
-                                transition: 'background-color 0.3s'
+                                transition: 'background-color 0.3s, border-color 0.3s'
                             }}
                             aria-label={`Go to slide ${index + 1}`}
                         />
