@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function BodyFooter() {
   return (
     <div className="bparent2">

@@ -1,5 +1,7 @@
 import React from 'react';
-
+import achievement1 from '../static/images/achievement1.png';
+import achievement2 from '../static/images/achievement2.png';
+import achievement3 from '../static/images/achievement3.png';
 
 
 export default function Achievements() {
@@ -7,30 +9,23 @@ export default function Achievements() {
     {
       id: 1,
       number: "1",
-      title: "FLORAL",
-      description: "Living art for homes, businesses, and events.",
-      image: "https://images.unsplash.com/photo-1582794802409-8d1e89e85ff8?w=600&h=600&fit=crop"
+      title: "Recognition from Distinguished Dignitaries",
+      description: "We were deeply honored to receive recognition from distinguished personalities, including Mr. Pruthviraj Baba Chavan, former Chief Minister of Maharashtra, and Satvasheela Chavan Ma’am, whose presence added immense value to the occasion.",
+      image: achievement1
     },
     {
       id: 2,
       number: "2",
-      title: "NATIVE PLANT ARRANGEMENTS",
-      description: "Whether it's a private retreat or a public space, we craft floral experiences that bloom beyond expectations.",
-      image: "https://images.unsplash.com/photo-1605655014175-c1cbc1d36692?w=600&h=600&fit=crop"
+      title: "Joining Hands for Change: MoU Signed",
+      description: "Officially signed a Memorandum of Understanding (MoU) with the esteemed Karve Institute of Social Service. Together, we’re poised to enhance our impact and advance the mission of social work in our community. ",
+      image: achievement2
     },
     {
       id: 3,
       number: "3",
-      title: "CUSTOM BOUQUETS",
-      description: "Beautifully curated flower arrangements for every occasion and celebration.",
-      image: "https://images.unsplash.com/photo-1567763568409-e4f83e66a000?w=600&h=600&fit=crop"
-    },
-    {
-      id: 4,
-      number: "4",
-      title: "EVENT DECORATIONS",
-      description: "Transform your special moments with our stunning floral decorative services.",
-      image: "https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=600&h=600&fit=crop"
+      title: "Computer lab in the Zilha Parishad School",
+      description: "Privilege of meeting Mr. Shri Rahul Karad Sir, the Executive President of MIT-WPU.  Thanks to their generous support, we are almost done with a successfully set up of computer lab in the Zilha Parishad School of the village Jambhali which is adopted by our NGO, Umeed- The Hope For Living.",
+      image: achievement3
     }
   ];
 
@@ -51,7 +46,7 @@ export default function Achievements() {
               {index % 2 === 0 ? (
                 <>
                   <div>
-                    <div className="achievement-number">{achievement.number}</div>
+                    {/* <div className="achievement-number">{achievement.number}</div> */}
                     <div className="achievement-content">
                       <h2>{achievement.title}</h2>
                       <p>{achievement.description}</p>
@@ -67,7 +62,7 @@ export default function Achievements() {
                     <img src={achievement.image} alt={achievement.title} />
                   </div>
                   <div>
-                    <div className="achievement-number">{achievement.number}</div>
+                    {/* <div className="achievement-number">{achievement.number}</div> */}
                     <div className="achievement-content">
                       <h2>{achievement.title}</h2>
                       <p>{achievement.description}</p>

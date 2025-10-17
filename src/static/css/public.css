@@ -23,7 +23,7 @@
     height: 100vh;
     background: repeating-linear-gradient(90deg,
             #ffd43b 0px,
-            #ffd43b 75px,
+            #ffd43b 60px,
             #ffffff 50px,
             #ffffff 100px);
     z-index: -1;
@@ -65,9 +65,16 @@
     justify-content: center;
 }
 
+.hdiv1 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
 
 .hdiv2 {
     grid-column: span 4 / span 4;
+    grid-column-start: 2;
     align-items: center;
     display: flex;
     font-size: 35px;
@@ -101,6 +108,15 @@
     color: #3d2817;
     justify-content: center;
 }
+
+.hdiv3, .hdiv4, .hdiv5 {
+    transition: all 0.5s ease;
+}
+
+.hdiv1 img {
+    height: 70px;
+}
+
 
 /* Slider */
 
@@ -206,7 +222,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-image: url(https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=600&fit=crop);
+    background-image: url('../images/vision.png');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -271,8 +287,18 @@
   .achievements-header {
     text-align: center;
     padding: 80px 40px;
-    border-bottom: 1px solid #e0e0e0;
+    position: relative;
   }
+
+  .achievements-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    border-bottom: 1px solid #3d2817;
+}
 
   .achievements-header-title {
     font-size: 3.5rem;
@@ -284,7 +310,7 @@
 
   .achievements-header-subtitle {
     font-size: 1.1rem;
-    color: #666;
+    color: #3d2817;
     font-weight: 400;
   }
 
@@ -302,11 +328,11 @@
 
   .achievement-item {
     display: grid;
-    grid-template-columns: 1fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 80px;
     padding: 100px 0;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #3d2817;
   }
 
   .achievement-item:last-child {
@@ -316,7 +342,7 @@
   .achievement-number {
     font-size: 4rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #3d2817;
     margin-bottom: 40px;
   }
 
@@ -348,20 +374,27 @@
 
   .achievement-content h2 {
     font-size: 2.8rem;
-    color: #1a1a1a;
+    color: #3d2817;
     font-weight: 700;
     letter-spacing: -0.5px;
   }
 
   .achievement-content p {
     font-size: 1rem;
-    color: #555;
+    color: #3d2817;
     line-height: 1.6;
     font-weight: 400;
   }
 
   .image-right {
     grid-template-columns: 1fr 1fr;
+    direction: rtl;
+  }
+
+
+  /* Fix text direction inside reversed grid */
+  .image-right > * {
+    direction: ltr;
   }
 
   .image-right .achievement-image {
