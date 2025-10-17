@@ -6,6 +6,7 @@ export default function Body() {
         <div>
             <BodyHeader />
             <BodySlider />
+            {/* <hr style={{width:'95%', color:'#ffd43b'}}/> */}
         </div>
     );
 }
