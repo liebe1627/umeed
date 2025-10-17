@@ -4,11 +4,13 @@ import Slider from './Slider'
 
 export default function Home() {
     return (
-        <div className='home'>
+        <div>
             <div className='stripes'></div>
-            <div className="content">
-                <Header />
-                <Slider />
+            <div className='home'>
+                <div className="content">
+                    <Header />
+                    <Slider />
+                </div>
             </div>
         </div>
     )
