@@ -124,4 +124,51 @@
     grid-row: span 4 / span 4;
 }
 
- 
+/* Body */
+.bparent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 8px;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.bdiv1 {
+    width: 85%;
+    background-color: #ffd43b;
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    justify-self: center;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.bdiv2 {
+    width: 85%;
+    background-color: #ffd43b;
+    grid-column: span 2/ span 2;
+    grid-row: span 2 / span 2;
+    justify-self: center;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Body Slider */
+
+.bsimgcontainer{
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 10px 40px;
+    scroll-behavior: smooth;
+}
