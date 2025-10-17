@@ -17,14 +17,14 @@ export default function Achievements() {
       id: 2,
       number: "2",
       title: "Joining Hands for Change: MoU Signed",
-      description: "Officially signed a Memorandum of Understanding (MoU) with the esteemed Karve Institute of Social Service. Together, we’re poised to enhance our impact and advance the mission of social work in our community. ",
+      description: "We are proud to announce the official signing of a Memorandum of Understanding (MoU) with the esteemed Karve Institute of Social Service. This partnership marks a significant milestone in our journey, as we join hands to advance the mission of social work and deepen our impact within the community. Together, we aim to foster meaningful change and empower lives through collaborative efforts.",
       image: achievement2
     },
     {
       id: 3,
       number: "3",
-      title: "Computer lab in the Zilha Parishad School",
-      description: "Privilege of meeting Mr. Shri Rahul Karad Sir, the Executive President of MIT-WPU.  Thanks to their generous support, we are almost done with a successfully set up of computer lab in the Zilha Parishad School of the village Jambhali which is adopted by our NGO, Umeed- The Hope For Living.",
+      title: "Empowering Education Through Meaningful Partnerships",
+      description: "We had the privilege of meeting Mr. Shri Rahul Karad Sir, Executive President of MIT-WPU, whose generous support has been instrumental in our mission. Thanks to this collaboration, we are proud to share that the computer lab at the Zilha Parishad School in Jambhali — a village adopted by our NGO, Umeed – The Hope For Living — is now nearly complete. This initiative marks a significant step toward enhancing digital access and educational opportunities for rural students.",
       image: achievement3
     }
   ];
