@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from '../logo.svg'
 
 // Hamburger Icon Component
 const HamburgerIcon = ({ isOpen }) => (
@@ -26,9 +27,9 @@ export default function Header({ scrollToSection, refs }) {
       <div className="hparent1">
         <div className="hparent2">
           <div className="hdiv1">
-            <img src="../logo.svg" alt="Logo" />
+            <img src={logo} alt="Logo" />
           </div>
-          <div className="hdiv2">Umeed- The Hope For Living</div>
+          <div className="hdiv2">Umeed - The Hope For Living</div>
 
           {/* Desktop Navigation */}
           <div
