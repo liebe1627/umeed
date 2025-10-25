@@ -847,7 +847,7 @@
   .bdiv2 {
     width: 95%;
     padding: 30px 20px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
   }
 
   .bdiv1h,
@@ -999,14 +999,14 @@
   /* Body sections */
   .bparent,
   .bparent2 {
-    min-height: 50vh;
+    min-height: 35vh;
   }
 
   .bdiv1,
   .bdiv2 {
     width: 95%;
     padding: 25px 15px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
   }
 
   .bdiv1h,
