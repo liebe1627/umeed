@@ -61,13 +61,7 @@ export default function Slider() {
 
     return (
         <div className="sparent">
-            <div className="sdiv1" style={{ 
-                position: 'relative', 
-                overflow: 'hidden', 
-                backgroundColor: '#f5f5f5', 
-                borderRadius: '20px', 
-                height: '600px' 
-            }}>
+            <div className="sdiv1">
                 <div style={{
                     display: 'flex',
                     transition: 'transform 0.5s ease-in-out',
