@@ -4,12 +4,16 @@ import BodySlider from './BodySlider';
 import BodyFooter from './BodyFooter';
 import Achivements from './Achivements';
 import OurWork from './OurWork';
+import Mission from './Mission';
+import Vision from './Vision';
 export default function Body({ refs }) {
     return (
         <div>
-            <BodyHeader />
+            {/* <BodyHeader /> */}
+            {/* <BodyFooter /> */}
+            <Mission />
             <BodySlider />
-            <BodyFooter />
+            <Vision />
             <div ref={refs.achievementsRef}>
                 <Achivements />
             </div>
