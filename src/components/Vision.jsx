@@ -64,8 +64,8 @@ export default function Vision() {
       </div>
       
       {/* Floating decorative elements */}
-      <div className="vision-glow-element vision-glow-1"></div>
-      <div className="vision-glow-element vision-glow-2"></div>
+      {/* <div className="vision-glow-element vision-glow-1"></div>
+      <div className="vision-glow-element vision-glow-2"></div> */}
     </section>
   );
 }

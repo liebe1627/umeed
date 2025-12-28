@@ -13,10 +13,12 @@ export default function Header({ scrollToSection, refs }) {
 
       // Detect active section based on scroll position
       const sections = [
+        { ref: refs.homeRef, name: '' },
         { ref: refs.achievementsRef, name: 'achievements' },
         { ref: refs.ourWorkRef, name: 'ourwork' },
         { ref: refs.goalsRef, name: 'goals' }
       ];
+
 
       for (let section of sections) {
         if (section.ref.current) {
@@ -45,7 +47,7 @@ export default function Header({ scrollToSection, refs }) {
 
   return (
     <>
-      <nav 
+      <nav
         className="hparent1"
         style={{
           position: 'fixed',
@@ -60,16 +62,16 @@ export default function Header({ scrollToSection, refs }) {
       >
         <div className="hparent2">
           {/* Logo with Glow Effect */}
-          <div 
-            className="hdiv1" 
-            style={{ 
+          <div
+            className="hdiv1"
+            style={{
               cursor: 'pointer',
               position: 'relative'
             }}
           >
-            <img 
-              src={logo} 
-              alt="Umeed Logo" 
+            <img
+              src={logo}
+              alt="Umeed Logo"
               style={{
                 transition: 'transform 0.3s ease, filter 0.3s ease',
                 filter: 'drop-shadow(0 0 0px rgba(255, 215, 0, 0))',
@@ -86,7 +88,7 @@ export default function Header({ scrollToSection, refs }) {
           </div>
 
           {/* Title */}
-          <div 
+          <div
             className="hdiv2"
             style={{
               transition: 'color 0.3s ease'
@@ -99,7 +101,7 @@ export default function Header({ scrollToSection, refs }) {
           <div
             className="hdiv3 desktop-nav"
             onClick={() => handleNavClick(refs.achievementsRef, 'achievements')}
-            style={{ 
+            style={{
               cursor: "pointer",
               transition: 'all 0.3s ease',
               position: 'relative',
@@ -135,7 +137,7 @@ export default function Header({ scrollToSection, refs }) {
           <div
             className="hdiv4 desktop-nav"
             onClick={() => handleNavClick(refs.ourWorkRef, 'ourwork')}
-            style={{ 
+            style={{
               cursor: "pointer",
               transition: 'all 0.3s ease',
               position: 'relative',
@@ -171,7 +173,7 @@ export default function Header({ scrollToSection, refs }) {
           <div
             className="hdiv5 desktop-nav"
             onClick={() => handleNavClick(refs.goalsRef, 'goals')}
-            style={{ 
+            style={{
               cursor: "pointer",
               transition: 'all 0.3s ease',
               position: 'relative',
@@ -215,7 +217,7 @@ export default function Header({ scrollToSection, refs }) {
         </div>
 
         {/* CTA Buttons Row - Desktop Only - Below main nav */}
-        <div 
+        <div
           className="desktop-nav"
           style={{
             display: 'flex',
@@ -238,7 +240,7 @@ export default function Header({ scrollToSection, refs }) {
               cursor: 'pointer',
               transition: 'all 0.3s ease',
               boxShadow: '0 4px 12px rgba(255, 215, 0, 0.3)',
-              fontFamily: '"Freckle Face", cursive'
+              // fontFamily: '"Freckle Face", cursive'
             }}
             onMouseEnter={(e) => {
               e.target.style.transform = 'translateY(-3px) scale(1.05)';
@@ -265,7 +267,7 @@ export default function Header({ scrollToSection, refs }) {
               cursor: 'pointer',
               transition: 'all 0.3s ease',
               boxShadow: '0 4px 12px rgba(46, 139, 87, 0.3)',
-              fontFamily: '"Freckle Face", cursive'
+              // fontFamily: '"Freckle Face", cursive'
             }}
             onMouseEnter={(e) => {
               e.target.style.transform = 'translateY(-3px) scale(1.05)';
@@ -284,7 +286,7 @@ export default function Header({ scrollToSection, refs }) {
       </nav>
 
       {/* Mobile Menu Dropdown */}
-      <div 
+      <div
         className={`mobile-menu ${isMenuOpen ? "active" : ""}`}
         style={{
           top: '80px',
@@ -322,7 +324,7 @@ export default function Header({ scrollToSection, refs }) {
         >
           Goals
         </div>
-        
+
         {/* Mobile CTA Buttons */}
         <div style={{ padding: '20px 30px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
           <button
@@ -362,8 +364,8 @@ export default function Header({ scrollToSection, refs }) {
 
       {/* Overlay */}
       {isMenuOpen && (
-        <div 
-          className="menu-overlay" 
+        <div
+          className="menu-overlay"
           onClick={toggleMenu}
         />
       )}

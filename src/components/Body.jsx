@@ -11,14 +11,16 @@ export default function Body({ refs }) {
         <div>
             {/* <BodyHeader /> */}
             {/* <BodyFooter /> */}
-            <Mission />
-            <BodySlider />
-            <Vision />
+            <div ref={refs.homeRef}>
+                <Mission />
+                <BodySlider />
+                <Vision />
+            </div>
             <div ref={refs.achievementsRef}>
                 <Achivements />
             </div>
             <div ref={refs.ourWorkRef}>
-                <OurWork/>
+                <OurWork />
             </div>
             {/* <hr style={{width:'95%', color:'#ffd43b'}}/> */}
         </div>

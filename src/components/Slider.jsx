@@ -199,7 +199,7 @@ export default function Slider() {
                                         transition: 'all 0.3s ease',
                                         boxShadow: '0 8px 30px rgba(255, 215, 0, 0.4)',
                                         animation: currentSlide === index ? 'fadeInUp 1s ease-out 0.6s backwards' : 'none',
-                                        fontFamily: '"Freckle Face", cursive'
+                                        // fontFamily: '"Freckle Face", cursive'
                                     }}
                                     onMouseEnter={(e) => {
                                         e.target.style.transform = 'translateY(-5px) scale(1.08)';
@@ -337,7 +337,7 @@ export default function Slider() {
                     ))}
                 </div>
 
-                {/* Progress Bar */}
+                {/* Progress Bar
                 <div 
                     style={{
                         position: 'absolute',
@@ -358,7 +358,7 @@ export default function Slider() {
                             boxShadow: '0 0 15px rgba(255, 215, 0, 0.6)'
                         }}
                     />
-                </div>
+                </div> */}
             </div>
 
             <style>{`

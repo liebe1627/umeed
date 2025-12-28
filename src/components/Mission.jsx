@@ -62,8 +62,8 @@ export default function Mission() {
       </div>
       
       {/* Floating decorative elements */}
-      <div className="mission-float-element mission-float-1"></div>
-      <div className="mission-float-element mission-float-2"></div>
+      {/* <div className="mission-float-element mission-float-1">Hello</div>
+      <div className="mission-float-element mission-float-2"></div> */}
     </section>
   );
 }
